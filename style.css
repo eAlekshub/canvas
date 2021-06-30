@@ -1,0 +1,11 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+canvas {
+  /* background: url("https://images.wallpaperscraft.ru/image/dym_sgustki_tsvetnoj_dym_126073_1280x720.jpg") no-repeat; */
+  background-color: black;
+  background-size: cover;
+}
