@@ -11,11 +11,11 @@ let particles = [];
 function addParticle(){
 	particles.push({
 		number: particles.length, //номер
-		opacity: random(0.2,0.9), //прозрачность
+		opacity: random(0.2,1), //прозрачность
 		opacity_step: random(0.002,0.008), //шаг изменения прозрачности
 		radius: random(1,2), //радиус
 		radius_step: random(0.2,3), //шаг изменения радиуса
-		angle: random(0,360), //угол
+		angle: random(0,5), //угол
 		angle_step: random(-0.1,1), //шаг изменения угла
 		x: random(200,250), //Х-координата
 		x_step: random(-5,10), //шаг изменения по Х
@@ -33,7 +33,7 @@ function addParticle(){
 		if(window.performance.now() - time < 28){ //вот та самая проверка "успеваемости", значение взято чуть меньше времени кадра, чтобы наверняка избавиться от тормозов
 			ctx.save(); //сохраняем состояние холста
 			ctx.translate(this.x,this.y); //задаем начальные координаты
-			//ctx.rotate(this.angle*Math.PI/180); //вращаем контекст
+			ctx.rotate(this.angle*Math.PI/180); //вращаем контекст
 			ctx.drawImage(img,-this.radius/2,-this.radius/2,this.radius,this.radius); //рисуем картинку
 			ctx.restore(); //восстанавливаем первоначальное состояние холста
 		}
